@@ -1,5 +1,94 @@
-upstream-name (pkgver-pkgrel) distro_codename; urgency=medium
+switcheroo-control (2.6-100pika1) pikauwu; urgency=medium
 
-  * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Add nvidia-vaapi-driver integration patch
 
- -- ferreo <harderthanfire@gmail.com>  Wed, 18 Jan 2023 21:48:14 +0000
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 24 Aug 2022 23:34:40 -0400
+
+switcheroo-control (2.6-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump debhelper-compat to 13
+  * Build-Depend on dh-sequence-gnome instead of gnome-pkg-tools
+  * debian/control.in: Build-Depend on python3-gi
+  * debian/control.in: Set Rules-Requires-Root: no
+  * debian/rules: Run tests
+  * debian/rules: Drop no-longer-needed -Wl,--as-needed
+  * Bump Standards-Version to 4.6.1
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Wed, 24 Aug 2022 23:34:40 -0400
+
+switcheroo-control (2.4-3) unstable; urgency=medium
+
+  * debian/control.in: umockdev is also needed for the tests
+
+ -- Sebastien Bacher <seb128@debian.org>  Mon, 01 Mar 2021 10:37:10 +0100
+
+switcheroo-control (2.4-2) unstable; urgency=medium
+
+  * debian/control.in:
+    - Build-Depends on gir1.2-umockdev-1.0, python3-dbus, python3-dbusmock,
+      those are needed for the new tests
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 26 Feb 2021 20:06:27 +0100
+
+switcheroo-control (2.4-1) unstable; urgency=medium
+
+  * New upstream version
+  * Updated for the new upstream build requirements
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Fri, 26 Feb 2021 16:17:31 +0100
+
+switcheroo-control (2.1-1) unstable; urgency=medium
+
+  * New upstream version
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Mon, 13 Jan 2020 15:10:38 +0100
+
+switcheroo-control (2.0-1) unstable; urgency=medium
+
+  * debian/watch: update for move from github to freedesktop.org
+  * New upstream release.
+  * Revert "* debian/patches/gtk-doc-make.patch:"
+  * Cherry-pick upstream fix GPUs property variant declaration
+  * Add libgudev-1.0-dev build-dependency
+  * Replace configure option udevrulesdir with hwdbdir
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sun, 15 Dec 2019 12:26:51 +0100
+
+switcheroo-control (1.3.1-2) unstable; urgency=medium
+
+  * debian/patches/gtk-doc-make.patch:
+    - include gtk-doc.make file which is missing from the tarball,
+      it's needed to be able to autoreconf the source
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 28 Aug 2019 11:12:47 +0200
+
+switcheroo-control (1.3.1-1) unstable; urgency=medium
+
+  * New upstream version
+    - Work-around lack of access to vga_switcheroo when booting with
+      SecureBoot enabled (lp: #1768988)
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Wed, 21 Aug 2019 16:10:03 +0200
+
+switcheroo-control (1.2-2) unstable; urgency=medium
+
+  * Build-Depend on debhelper-compat 12 and drop debian/compat
+  * Add -Wl,-O1 to our LDFLAGS
+  * Bump Standards-Version to 4.3.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 27 Dec 2018 12:38:04 -0500
+
+switcheroo-control (1.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update Vcs fields for migration to https://salsa.debian.org/
+  * Bump debhelper compat to 11
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 21 Jan 2018 11:06:48 -0500
+
+switcheroo-control (1.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #857503) (LP: #1671828)
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 04 Apr 2017 09:34:04 -0400
